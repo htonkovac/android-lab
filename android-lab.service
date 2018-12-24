@@ -1,0 +1,30 @@
+#This is a systemd service file for running this solution as part of systemd init system
+#this config was copied/inspired by the config posted by mosquito on the following url https://github.com/docker/compose/issues/4266 https://gist.github.com/mosquito/b23e1c1e5723a7fd9e6568e5cf91180f
+
+[Unit]
+Description=Android device lab service with docker compose
+Requires=docker.service
+After=docker.service
+
+[Service]
+Restart=always
+
+#Change this variable to location of the compose file
+WorkingDirectory=/android-lab
+
+# Remove old containers, images and volumes
+#ExecStartPre=/usr/local/bin/docker-compose down -v
+#ExecStartPre=/usr/local/bin/docker-compose rm -fv
+#ExecStartPre=-/bin/bash -c 'docker volume ls -qf "name=%i_" | xargs docker volume rm'
+#ExecStartPre=-/bin/bash -c 'docker network ls -qf "name=%i_" | xargs docker network rm'
+#ExecStartPre=-/bin/bash -c 'docker ps -aqf "name=%i_*" | xargs docker rm'
+
+# Compose up
+ExecStart=/usr/bin/docker-compose up
+
+# Compose down, remove containers and volumes
+ExecStop=/usr/bin/docker-compose down -v
+
+[Install]
+WantedBy=multi-user.target
+
