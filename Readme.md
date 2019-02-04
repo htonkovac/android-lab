@@ -19,3 +19,5 @@ login by providing any username and valid e-mail.
 A little write-up on this setup:  
 https://medium.com/@nikosch86/getting-started-with-automated-in-house-testing-on-android-smartphones-using-stf-dafecee4a8ee  
 If you clap it will make me happy :)
+
+ngrok for linux 32 bit: https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-386.zip
