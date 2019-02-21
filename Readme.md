@@ -22,7 +22,7 @@ If you clap it will make me happy :)
 
 ngrok for linux 32 bit: https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-386.zip
 
-##Put systemd service file in the right place and enable the service
+# Put systemd service file in the right place and enable the service
 
 sudo cp android-lab.service /lib/systemd/system/android-lab.service
 
